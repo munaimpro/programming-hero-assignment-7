@@ -2,16 +2,12 @@ import React, { Suspense } from 'react';
 import Hero from './Hero/Hero';
 import Stats from './Stats/Stats';
 import Friends from './Friends/Friends';
+import { useData } from '../../hook/useData';
 
 const HomePage = () => {
 
     // Fetch friends data
-    const fetchFriendsData = async () => {
-        const response = await fetch('/friends.json');
-        return response.json();
-    }
-
-    const friendsPromise = fetchFriendsData();
+    const friendsPromise = useData()
 
     return (
         <>

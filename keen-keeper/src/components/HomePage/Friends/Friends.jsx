@@ -5,7 +5,6 @@ import { Link } from 'react-router';
 const Friends = ({ friendsPromise }) => {
 
     const friends = use(friendsPromise);
-    console.log(friends);
 
     return (
         <div className='container mx-auto'>
