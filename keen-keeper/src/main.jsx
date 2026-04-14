@@ -4,10 +4,10 @@ import './index.css'
 import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Root from './components/Root/Root.jsx';
-import Home from './components/Home/Home.jsx';
 import Timeline from './components/Timeline/Timeline.jsx';
-import Stats from './components/Stats/Stats.jsx';
 import Notfound from './components/NotFound/NotFound.jsx';
+import HomePage from './components/HomePage/HomePage.jsx';
+import StatisticsPage from './components/StatisticsPage/StatisticsPage.jsx';
 
 const route = createBrowserRouter([
   {
@@ -16,7 +16,7 @@ const route = createBrowserRouter([
       children: [
         {
           'index': true,
-          'Component': Home
+          'Component': HomePage
         },
         {
           'path': 'timeline',
@@ -24,7 +24,7 @@ const route = createBrowserRouter([
         },
         {
           'path': 'stats',
-          'Component': Stats
+          'Component': StatisticsPage
         },
         {
           'path': '*',
