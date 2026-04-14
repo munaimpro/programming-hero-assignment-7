@@ -8,6 +8,7 @@ import Timeline from './components/Timeline/Timeline.jsx';
 import Notfound from './components/NotFound/NotFound.jsx';
 import HomePage from './components/HomePage/HomePage.jsx';
 import StatisticsPage from './components/StatisticsPage/StatisticsPage.jsx';
+import DetailsPage from './components/DetailsPage/DetailsPage.jsx';
 
 const route = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const route = createBrowserRouter([
         {
           'index': true,
           'Component': HomePage
+        },
+        {
+          'path': '/friends/:friendId',
+          'Component': DetailsPage
         },
         {
           'path': 'timeline',
