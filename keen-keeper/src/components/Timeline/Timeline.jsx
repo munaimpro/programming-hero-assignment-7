@@ -6,7 +6,7 @@ import videoIcon from '../../assets/video.png';
 const Timeline = () => {
     return (
         <div className='container mx-auto mt-20'>
-            <h2 className='text-[#1F2937] font-semibold text-2xl mb-4'>Timeline</h2>
+            <h2 className='text-[#1F2937] font-bold text-5xl mb-4'>Timeline</h2>
 
             <div className='my-6'>
                 <select class="select">

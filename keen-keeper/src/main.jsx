@@ -5,7 +5,7 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Root from './components/Root/Root.jsx';
 import Timeline from './components/Timeline/Timeline.jsx';
-import Notfound from './components/NotFound/NotFound.jsx';
+import NotFound from './components/NotFound/NotFound.jsx';
 import HomePage from './components/HomePage/HomePage.jsx';
 import StatisticsPage from './components/StatisticsPage/StatisticsPage.jsx';
 import DetailsPage from './components/DetailsPage/DetailsPage.jsx';
@@ -33,7 +33,7 @@ const route = createBrowserRouter([
         },
         {
           'path': '*',
-          'Component': Notfound
+          'Component': NotFound
         }
       ]
     }
