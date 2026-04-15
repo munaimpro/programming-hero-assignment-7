@@ -40,7 +40,7 @@ const DetailsPage = () => {
     })
 
     const { friendContactList, setFriendContact } = useContext(TimelineContext);
-    console.log(friendContactList);
+    // console.log(friendContactList);
     const handleFriendContact = (contactType) => {
         const updatedFriendData = {
             ...friend,
@@ -51,7 +51,7 @@ const DetailsPage = () => {
         setFriendContact([...friendContactList, updatedFriendData]);
 
         toast.success(`${updatedFriendData.contact_type.charAt(0).toUpperCase()}${updatedFriendData.contact_type.slice(1)} with ${updatedFriendData.name}`)
-        console.log(friendContactList)
+        // console.log(friendContactList)
     }
 
     return (

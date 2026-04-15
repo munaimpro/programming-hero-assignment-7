@@ -16,7 +16,8 @@ const Timeline = () => {
                 <select className="select" defaultValue="">
                     <option value="all" disabled="">Filter timeline</option>
                     <option value="text">Text</option>
-                    <option value="call">Call</option><option value="video">Video</option></select>
+                    <option value="call">Call</option><option value="video">Video</option>
+                </select>
             </div>
 
             {
@@ -50,7 +51,7 @@ const Timeline = () => {
                         <div className="text-center text-gray-700 py-6">
                             No Data Found
                         </div>
-                )
+                    )
             }
         </div>
     );
