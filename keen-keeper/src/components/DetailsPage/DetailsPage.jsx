@@ -1,10 +1,12 @@
-import React, { Suspense, useState } from 'react';
+import React, { Suspense, useContext } from 'react';
 import { ArchiveIcon, Bell, BellOff, Mail, Trash2Icon } from 'lucide-react'
 import callIcon from '../../assets/call.png';
 import textIcon from '../../assets/text.png';
 import videoIcon from '../../assets/video.png';
 import { useLoaderData, useParams } from 'react-router';
 import Tags from '../HomePage/Friends/Tags';
+import { TimelineContext } from '../../context/TimelineContext';
+import { toast } from 'react-toastify';
 
 const DetailsPage = () => {
 
@@ -37,10 +39,18 @@ const DetailsPage = () => {
         day: 'numeric'
     })
 
-    const [friendContactList, setFriendContact] = useState([]);
+    const { friendContactList, setFriendContact } = useContext(TimelineContext);
     console.log(friendContactList);
-    const handleFriendContact = () => {
-        setFriendContact([...friendContactList, friend]);
+    const handleFriendContact = (contactType) => {
+        const updatedFriendData = {
+            ...friend,
+            'contact_date': new Date().toISOString().split('T')[0],
+            'contact_type': contactType
+        }
+        
+        setFriendContact([...friendContactList, updatedFriendData]);
+
+        toast.success(`${updatedFriendData.contact_type.charAt(0).toUpperCase()}${updatedFriendData.contact_type.slice(1)} with ${updatedFriendData.name}`)
         console.log(friendContactList)
     }
 
@@ -120,19 +130,19 @@ const DetailsPage = () => {
                     <div className='card bg-base-100 shadow rounded-xl p-8 justify-center'>
                         <h2 className='text-[#244D3F] font-medium text-[20px]'>Quick Check-In</h2>
                         <div className="grid grid-cols-3 gap-4 mt-4">
-                            <button onClick={() => handleFriendContact()} className='btn h-20 py-4 flex flex-col text[#1F2937]'>
+                            <button onClick={() => handleFriendContact('call')} className='btn h-20 py-4 flex flex-col text[#1F2937]'>
                                 <div>
                                     <img src={callIcon} alt="call" />
                                 </div>
                                 <span>Call</span>
                             </button>
-                            <button onClick={() => handleFriendContact()} className='btn h-20 py-4 flex flex-col text[#1F2937]'>
+                            <button onClick={() => handleFriendContact('text')} className='btn h-20 py-4 flex flex-col text[#1F2937]'>
                                 <div>
                                     <img src={textIcon} alt="text" />
                                 </div>
                                 <span>Text</span>
                             </button>
-                            <button onClick={() => handleFriendContact()} className='btn h-20 py-4 flex flex-col text[#1F2937]'>
+                            <button onClick={() => handleFriendContact('video')} className='btn h-20 py-4 flex flex-col text[#1F2937]'>
                                 <div>
                                     <img src={videoIcon} alt="video" />
                                 </div>
