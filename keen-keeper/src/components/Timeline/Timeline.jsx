@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import callIcon from '../../assets/call.png';
 import textIcon from '../../assets/text.png';
 import videoIcon from '../../assets/video.png';
@@ -8,12 +8,18 @@ const Timeline = () => {
     const { friendContactList } = useContext(TimelineContext);
     console.log(friendContactList.length);
 
+    // Filter state
+    const [filter, setFilter] = useState('all');
+
+    // Set filtered list
+    const filteredList = filter === 'all' ? friendContactList : friendContactList.filter(list => list.contact_type == filter);
+
     return (
         <div className='container mx-auto mt-20'>
             <h2 className='text-[#1F2937] font-bold text-5xl mb-4'>Timeline</h2>
 
             <div className='my-6'>
-                <select className="select" defaultValue="">
+                <select className="select" defaultValue={filter} onChange={(event) => setFilter(event.target.value)}>
                     <option value="all" disabled="">Filter timeline</option>
                     <option value="text">Text</option>
                     <option value="call">Call</option><option value="video">Video</option>
@@ -21,8 +27,8 @@ const Timeline = () => {
             </div>
 
             {
-                friendContactList.length > 0 ? (
-                    friendContactList.map((list, key) => {
+                filteredList.length > 0 ? (
+                    filteredList.map((list, key) => {
                         return (
                             <div key={key} className='shadow-card shadow-sm items-center bg-base-100 flex gap-4 p-3 rounded-xl mb-4'>
                                 <div className='w-fit'>
