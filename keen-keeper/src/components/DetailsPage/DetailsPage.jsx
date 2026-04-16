@@ -60,23 +60,26 @@ const DetailsPage = () => {
                 <div className="col-span-2">
                     {/* Friend 1 */}
                     <div className='card bg-base-100 shadow text-center rounded-xl p-8 justify-center items-center'>
-                        <div className='bg-[#D9D9D9] rounded-full mb-3'>
+                        {/* Profile picture */}
+                        <div className='bg-[#D9D9D9] rounded-full overflow-hidden mb-3'>
                             <img src={friend.picture} alt={friend.name} />
                         </div>
                         
+                        {/* Name */}
                         <h2 className='text-[20px] font-semibold mb-2 text-[#1F2937]'>{friend.name}</h2>
-                        
-                        <p className='text-[#64748B] text-[12px] mb-2'>{friend.days_since_contact}d ago</p>
+
+                        {/* Status */}
+                        {status}
 
                         {/* Tags */}
                         {/* <div className="badge badge-success bg-[#CBFADB] border-[#CBFADB] text-[#244D3F] rounded-2xl font-medium text-[12px] uppercase py-1.5 px-2 mb-2">Work</div> */}
                         <Tags tags={friend.tags} />
                         
-                        {/* Status */}
-                        {status}
-                        
                         {/* Bio */}
                         <p style={{ "fontStyle": "italic" }} className='text-[#64748B] text-sm'>"{friend.bio}"</p>
+
+                        {/* Email */}
+                        <p className='text-[#64748B] text-sm mt-3'>{friend.email}</p>
                     </div>
 
                     {/* Action buttons */}
