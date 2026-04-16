@@ -30,7 +30,7 @@ const Timeline = () => {
                 filteredList.length > 0 ? (
                     filteredList.map((list, key) => {
                         return (
-                            <div key={key} className='shadow-card shadow-sm items-center bg-base-100 flex gap-4 p-3 rounded-xl mb-4'>
+                            <div key={key} className='shadow-card border border-[#E9E9E9] items-center bg-base-100 flex gap-4 p-3 rounded-xl mb-4'>
                                 <div className='w-fit'>
                                     {
                                         list.contact_type === 'call' ? (

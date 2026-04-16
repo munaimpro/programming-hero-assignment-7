@@ -126,7 +126,7 @@ const DetailsPage = () => {
                             <h2 className='text-[#244D3F] font-medium text-[20px]'>Relationship Goal</h2>
                             <button className=' btn btn-sm'>Edit</button>
                         </div>
-                        <p className='text-[#64748B] text-[18px]'>Connect every <span className='text-[#1F2937]'>{friend.goal} days</span></p>
+                        <p className='text-[#64748B] text-[18px]'>Connect every <span className='text-[#1F2937] font-bold'>{friend.goal} days</span></p>
                     </div>
 
                     {/* Quick Chek-in */}
