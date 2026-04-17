@@ -27,8 +27,8 @@ const Friends = ({ friendsPromise }) => {
                         }
 
                         return (
-                            <Link to={`/friends/${friend.id}`}>
-                                <div key={key} className='card bg-base-100 shadow text-center rounded-xl py-8 justify-center items-center cursor-pointer'>
+                            <Link key={key} to={`/friends/${friend.id}`}>
+                                <div className='card bg-base-100 shadow text-center rounded-xl py-8 justify-center items-center cursor-pointer'>
 
                                     {/* Profile Picture */}
                                     <div className='bg-[#D9D9D9] rounded-full overflow-hidden mb-3'>

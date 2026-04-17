@@ -67,7 +67,7 @@ const StatisticsPage = () => {
                         </div>
                     ) : (
                         <div className="text-center text-gray-700 py-6">
-                                No interactions logged yet. {totalCall}
+                                No interactions logged yet.
                         </div>
                     )
                 }
