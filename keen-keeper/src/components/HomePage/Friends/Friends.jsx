@@ -9,7 +9,7 @@ const Friends = ({ friendsPromise }) => {
     return (
         <div className='container mx-auto'>
             <h2 className='text-[#1F2937] font-semibold text-2xl mb-4'>Your friends</h2>
-            <div className="grid gap-6 grid-col-1 lg:grid-cols-4">
+            <div className="grid gap-6 grid-cols-1 lg:grid-cols-4">
                 {/* Friend 1 */}
                 {
                     friends.map((friend, key) => {
