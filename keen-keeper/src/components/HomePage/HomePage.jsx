@@ -13,7 +13,9 @@ const HomePage = () => {
         <>
             <Hero></Hero>
             <Stats></Stats>
-            <Suspense fallback={<span className="loading loading-xl loading-spinner text-primary"></span>}>
+            <Suspense fallback={<div className='flex w-full items-center justify-center'>
+                <span className="loading loading-xl loading-spinner text-primary"></span>
+            </div>}>
                 <Friends friendsPromise={friendsPromise}></Friends>
             </Suspense>
         </>
